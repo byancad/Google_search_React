@@ -23,7 +23,7 @@ class Home extends Component {
       [name]: value
     });
   };
-// Create function inside component to query API
+  // Create function inside component to query API
   getBooks = () => {
     API.getBooks(this.state.q)
       .then(res =>
@@ -69,7 +69,9 @@ class Home extends Component {
               <h1 className="text-center">
                 <strong>(React) Google Books Search</strong>
               </h1>
-              <h2 className="text-center">Search for and Save Books of Interest.</h2>
+              <h2 className="text-center">
+                Search for and Save Books of Interest.
+              </h2>
             </Jumbotron>
           </Col>
           <Col size="md-12">
@@ -87,7 +89,6 @@ class Home extends Component {
             <Card title="Results">
               {this.state.books.length ? (
                 <List>
-                {/* Yo, there's a lot of key:value pairs here, we gotta map 'em */}
                   {this.state.books.map(book => (
                     <Book
                       key={book.id}
@@ -96,7 +97,10 @@ class Home extends Component {
                       link={book.volumeInfo.infoLink}
                       authors={book.volumeInfo.authors.join(", ")}
                       description={book.volumeInfo.description}
-                      image={book.volumeInfo.imageLinks.thumbnail}
+                      image={
+                        book.volumeInfo.imageLinks &&
+                        book.volumeInfo.imageLinks.thumbnail
+                      }
                       Button={() => (
                         <button
                           onClick={() => this.handleBookSave(book.id)}

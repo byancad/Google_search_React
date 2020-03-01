@@ -1,6 +1,4 @@
-// Mostly boilerplate stuff
 const express = require("express");
-
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
@@ -14,7 +12,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// Add routes, both API and view
+// Add routes
 app.use(routes);
 
 // Connect to the Mongo DB
