@@ -11,6 +11,10 @@ This project uses the following technologies:
 Begin with searching your favorite book, google books api will load every book in the database with the name or close to that of your search.  
  You can save books of interest and keep searching!
 
+## Demo
+
+Google Books Search is deployed to Heroku. Please check it out [here](https://google-react-bya.herokuapp.com/).
+
 ## Quick Start
 
 ```javascript
